@@ -59,7 +59,7 @@ class Chirpstream
     end
 
     def twitter_oauth_consumer
-      OAuth::Consumer.new(consumer_token, consumer_secret, :site => "http://twitter.com")
+      OAuth::Consumer.new(consumer_token, consumer_secret, {:site => "http://twitter.com", :scheme => :header})
     end
 
     def twitter_oauth_access_token(token=nil,secret=nil)
