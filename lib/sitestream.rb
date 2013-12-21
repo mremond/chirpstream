@@ -29,7 +29,7 @@ RECONNECT_AFTER = 5
 
 Signal.trap("USR1") do
   puts "Received USR1"
-  Sitestream.should_check_stream=true
+  Sitestream2.should_check_stream=true
 end
 
 module EventMachine
@@ -38,11 +38,11 @@ module EventMachine
   end
 end
 
-class Sitestream < Chirpstream
+class Sitestream2 < Chirpstream
   attr_accessor :accounts
   def initialize(options = nil)
     super(options)
-    @connect_url = "http://betastream.twitter.com/2b/site.json"
+    @connect_url = "https://sitestream.twitter.com/2b/site.json"
   end
 
   EventHandlerTypes.each do |h|
